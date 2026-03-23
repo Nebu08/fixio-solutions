@@ -1,0 +1,377 @@
+/* ── Nosotros Page ──────────────────────────────────────────────────── */
+
+.nosotros-page {
+  padding-bottom: 6rem;
+}
+
+/* ── HERO ───────────────────────────────────────────────────────────── */
+.nosotros-hero {
+  position: relative;
+  padding: 8rem 0 5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.nosotros-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, color-mix(in srgb, var(--color-primary) 18%, transparent), transparent 70%);
+  pointer-events: none;
+}
+
+.nosotros-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.nosotros-hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.nosotros-hero-content p {
+  font-size: 1.15rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* ── QUIÉNES SOMOS ──────────────────────────────────────────────────── */
+.nosotros-about {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.nosotros-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.nosotros-about-text {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.nosotros-about-text h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.nosotros-about-text p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.nosotros-about-text p:last-child { margin-bottom: 0; }
+
+.nosotros-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.nosotros-stat {
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.25s ease;
+}
+
+.nosotros-stat:hover { transform: translateY(-4px); }
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* ── VALORES ─────────────────────────────────────────────────────────── */
+.nosotros-valores {
+  background: var(--color-surface-1);
+  padding: 5rem 0;
+  margin: 2rem 0;
+}
+
+.text-center { text-align: center; }
+
+.nosotros-valores .section-title,
+.nosotros-mision .section-title,
+.nosotros-contacto .section-title,
+.nosotros-mapa .section-title {
+  margin-bottom: 0.75rem;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.valor-card {
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.valor-card:hover { transform: translateY(-5px); }
+
+.valor-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-primary) 15%, transparent);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.valor-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.valor-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ── MISIÓN & VISIÓN ─────────────────────────────────────────────────── */
+.nosotros-mision {
+  margin: 4rem auto;
+}
+
+.mision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.mision-card {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  transition: transform 0.25s ease;
+}
+
+.mision-card:hover { transform: translateY(-4px); }
+
+.mision-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mision-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.mision-card p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* ── CONTACTO ────────────────────────────────────────────────────────── */
+.nosotros-contacto {
+  padding: 5rem 0;
+}
+
+.contacto-subtitle {
+  color: var(--color-text-secondary);
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contacto-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  transition: transform 0.2s ease;
+}
+
+.contacto-card:hover { transform: translateX(4px); }
+
+.contacto-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-primary) 15%, transparent);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto-card h4 {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.contacto-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.text-muted { color: var(--color-text-secondary) !important; font-size: 0.85rem !important; }
+
+.wp-inline-btn {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, #25d366 18%, transparent);
+  color: #25d366;
+  border: 1px solid color-mix(in srgb, #25d366 35%, transparent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.wp-inline-btn:hover {
+  background: color-mix(in srgb, #25d366 28%, transparent);
+}
+
+/* Formulario */
+.contacto-form-wrapper {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.contacto-form-wrapper h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 1.75rem;
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.contacto-form input,
+.contacto-form select,
+.contacto-form textarea {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.contacto-form input:focus,
+.contacto-form select:focus,
+.contacto-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.contacto-form textarea { resize: vertical; min-height: 130px; }
+
+/* ── MAPA ─────────────────────────────────────────────────────────────── */
+.nosotros-mapa {
+  padding: 5rem 0 2rem;
+}
+
+.mapa-wrapper {
+  margin-top: 2.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .valores-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nosotros-about-grid,
+  .mision-grid,
+  .contacto-grid { grid-template-columns: 1fr; }
+
+  .nosotros-stats-grid { grid-template-columns: 1fr 1fr; }
+
+  .valores-grid { grid-template-columns: 1fr 1fr; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .contacto-form-wrapper { padding: 1.75rem; }
+}
+
+@media (max-width: 480px) {
+  .valores-grid { grid-template-columns: 1fr; }
+  .nosotros-stats-grid { grid-template-columns: 1fr 1fr; }
+}
