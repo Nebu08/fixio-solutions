@@ -6,6 +6,7 @@ import ProductCard from '../components/ui/ProductCard';
 import SEO from '../components/ui/SEO';
 import { useProducts } from '../context/ProductContext';
 import { usePromos } from '../context/PromoContext';
+import { GlowingDemo } from '../components/GlowingDemo';
 import './Home.css';
 
 export default function Home() {
@@ -83,34 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about-services container" style={{ marginTop: '5rem', marginBottom: '3rem' }}>
-        <div className="glass" style={{ padding: '3rem', borderRadius: 'var(--radius-lg)', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--color-text-primary)' }}>Nuestra Filosofía Fixio</h2>
-          <p style={{ fontSize: '1.1rem', color: 'var(--color-text-secondary)', lineHeight: '1.8', maxWidth: '800px', margin: '0 auto' }}>
-            En <strong style={{color: 'var(--color-primary)'}}>Fixio Solutions</strong>, creemos que la tecnología de vanguardia no debe ser complicada. Nuestro compromiso es democratizar el acceso a un hogar inteligente, poniendo a disposición de las personas herramientas cotidianas que ahorren tiempo, brinden tranquilidad y mejoren la calidad de vida de tu familia. Descubre un catálogo cuidadosamente seleccionado con productos probados, garantizados y sobre todo: fáciles de usar desde el primer minuto.
-          </p>
-        </div>
-      </section>
-
-      <section id="features" className="features">
-        <div className="container features-grid">
-          <div className="feature-card glass">
-            <div className="feature-icon"><Zap size={24} /></div>
-            <h3>Uso Práctico</h3>
-            <p>Diseños orientados a facilitar tus tareas diarias.</p>
-          </div>
-          <div className="feature-card glass">
-            <div className="feature-icon"><ShieldCheck size={24} /></div>
-            <h3>Fácil de Usar</h3>
-            <p>Implementación instantánea y amigable para todos.</p>
-          </div>
-          <div className="feature-card glass">
-            <div className="feature-icon"><Truck size={24} /></div>
-            <h3>Envíos a todo el País</h3>
-            <p>Hasta la puerta de tu hogar en toda Colombia.</p>
-          </div>
-        </div>
-      </section>
+      <GlowingDemo />
 
       <section className="featured-section">
         <div className="container">
