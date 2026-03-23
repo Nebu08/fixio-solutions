@@ -16,46 +16,36 @@ export function GlowingDemo() {
         </p>
       </div>
 
-      <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2 p-0">
+      <div className="flex flex-col lg:flex-row w-full gap-6 p-0 mt-8 list-none">
         <GridItem
-          area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-          icon={<ShieldCheck className="h-4 w-4 text-[var(--color-primary)]" />}
-          title="Garantía de Calidad"
+          icon={<ShieldCheck className="h-6 w-6 text-[var(--color-primary)]" />}
+          title="🛡️ Garantía de Calidad"
           description="Todos nuestros equipos pasan por un riguroso proceso de calidad antes de llegar a tus manos."
         />
         <GridItem
-          area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-          icon={<Zap className="h-4 w-4 text-[var(--color-accent)]" />}
-          title="Uso Práctico y Sencillo"
+          icon={<Zap className="h-6 w-6 text-[var(--color-accent)]" />}
+          title="⚡ Uso Práctico"
           description="Implementación instantánea. Diseños orientados a facilitar tus tareas diarias sin complicaciones."
         />
         <GridItem
-          area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-          icon={<Truck className="h-4 w-4 text-[var(--color-primary)]" />}
-          title="Envíos a todo el País"
-          description="Llevamos la última tecnología hasta la puerta de tu hogar en toda Colombia y con envío ágil en Bogotá."
+          icon={<Truck className="h-6 w-6 text-[var(--color-primary)]" />}
+          title="🚚 Envíos a todo el País"
+          description="Llevamos la última tecnología hasta la puerta de tu hogar en Colombia y exprés en Bogotá."
         />
         <GridItem
-          area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-          icon={<Users className="h-4 w-4 text-[#C8E4F9]" />}
-          title="Soporte Humano"
+          icon={<Users className="h-6 w-6 text-[#C8E4F9]" />}
+          title="👥 Soporte Humano Local"
           description="Personas reales listas para ayudarte. Detrás de cada pedido hay un equipo cuidando tu experiencia."
         />
-        <GridItem
-          area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-          icon={<Box className="h-4 w-4 text-[var(--color-text-secondary)]" />}
-          title="Catálogo Variado"
-          description="Desde audio inteligente hasta cámaras de seguridad 4K, todo seleccionado cuidadosamente para ti."
-        />
-      </ul>
+      </div>
     </section>
   );
 }
 
-const GridItem = ({ area, icon, title, description }) => {
+const GridItem = ({ icon, title, description }) => {
   return (
-    <li className={cn("min-h-[14rem] list-none", area)}>
-      <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+    <div className="flex-1 w-full min-w-0">
+      <div className="relative w-full h-full rounded-2xl border-[1px] border-border/50 hover:border-[var(--color-primary)] transition-colors p-1.5 bg-[var(--color-surface-2)]">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -64,22 +54,20 @@ const GridItem = ({ area, icon, title, description }) => {
           inactiveZone={0.01}
           borderWidth={3}
         />
-        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm md:p-6" style={{ backgroundColor: 'var(--color-surface-1)' }}>
-          <div className="relative flex flex-1 flex-col justify-between gap-3">
-            <div className="w-fit rounded-lg border-[0.75px] border-border bg-muted p-2" style={{ backgroundColor: 'var(--color-bg)' }}>
-              {icon}
-            </div>
-            <div className="space-y-3">
-              <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance text-foreground" style={{ color: 'var(--color-text-primary)' }}>
-                {title}
-              </h3>
-              <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-muted-foreground" style={{ color: 'var(--color-text-secondary)' }}>
-                {description}
-              </h2>
-            </div>
+        <div className="relative flex flex-col items-center text-center justify-start gap-4 overflow-hidden rounded-[14px] bg-[var(--color-surface-1)] p-6 shadow-sm h-full w-full z-10">
+          <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[var(--color-bg)] border border-[var(--color-border)] shadow-sm">
+            {icon}
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-lg font-bold font-sans text-[var(--color-text-primary)]">
+              {title}
+            </h3>
+            <p className="font-sans text-[0.95rem] leading-relaxed text-[var(--color-text-secondary)]">
+              {description}
+            </p>
           </div>
         </div>
       </div>
-    </li>
+    </div>
   );
 };

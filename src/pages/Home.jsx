@@ -7,6 +7,7 @@ import SEO from '../components/ui/SEO';
 import { useProducts } from '../context/ProductContext';
 import { usePromos } from '../context/PromoContext';
 import { GlowingDemo } from '../components/GlowingDemo';
+import { GradientDots } from '../components/ui/gradient-dots';
 import './Home.css';
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
   }, [promos]);
   return (
     <div className="home-page animate-fade-in">
+      <GradientDots className="!fixed opacity-20 z-[-2]" duration={40} />
       <SEO title="Inicio" description="Todo para un hogar inteligente con tecnología accesible. Compra online y disfruta ofertas exclusivas." url="/" />
       <div className="glow glow-1"></div>
       <div className="glow glow-2"></div>

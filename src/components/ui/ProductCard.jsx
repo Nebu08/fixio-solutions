@@ -1,6 +1,8 @@
 import { ShoppingCart, Heart, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
+import { ParticleButton } from './particle-button';
+import { GlowingEffect } from './glowing-effect';
 import { useCart } from '../../context/CartContext';
 import './ProductCard.css';
 
@@ -14,20 +16,24 @@ export default function ProductCard({ product }) {
     : 0;
   
   return (
-    <div className="product-card glass" style={{ backgroundColor: 'var(--color-surface-1)' }}>
-      <div className="product-image-container" style={{ backgroundColor: 'var(--color-surface-2)' }}>
+    <div className="product-card glass relative" style={{ backgroundColor: 'var(--color-surface-1)' }}>
+      <GlowingEffect spread={40} glow={true} disabled={false} inactiveZone={0.01} borderWidth={3} className="z-0" />
+      
+      <div className="product-image-container relative z-10" style={{ backgroundColor: 'var(--color-surface-2)' }}>
         <Link to={`/product/${id}`}>
           <img src={image || 'https://via.placeholder.com/300x300/C8E4F9/333333?text=Producto'} alt={name} className="product-image" />
         </Link>
-        <button className="favorite-btn" aria-label="Añadir a favoritos">
-          <Heart size={18} />
-        </button>
+        <ParticleButton asChild>
+          <button className="favorite-btn" aria-label="Añadir a favoritos">
+            <Heart size={18} />
+          </button>
+        </ParticleButton>
         {isDiscounted && (
           <span className="discount-badge">Oferta</span>
         )}
       </div>
       
-      <div className="product-info">
+      <div className="product-info relative z-10 flex-grow">
         <span className="product-category">{category}</span>
         <Link to={`/product/${id}`}>
           <h3 className="product-title">{name}</h3>
@@ -53,19 +59,21 @@ export default function ProductCard({ product }) {
             Agotado
           </Button>
         ) : (
-          <Button 
-            variant="primary" 
-            fullWidth 
-            className="add-to-cart-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              addToCart(product, 1);
-            }}
-          >
-            <ShoppingCart size={16} />
-            Al Carrito
-          </Button>
+          <ParticleButton asChild>
+            <Button 
+              variant="primary" 
+              fullWidth 
+              className="add-to-cart-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                addToCart(product, 1);
+              }}
+            >
+              <ShoppingCart size={16} />
+              Al Carrito
+            </Button>
+          </ParticleButton>
         )}
       </div>
     </div>

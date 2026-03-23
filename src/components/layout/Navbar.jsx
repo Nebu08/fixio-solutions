@@ -45,8 +45,14 @@ export default function Navbar() {
               alt="Fixio Solutions Logo"
               style={{ maxHeight: '40px', display: 'block' }}
               onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'block';
+                // Si logo.png falla, intenta con logo.svg.jpg que vimos en tu carpeta public
+                if (!e.target.getAttribute('data-tried-fallback')) {
+                  e.target.setAttribute('data-tried-fallback', 'true');
+                  e.target.src = '/logo.svg.jpg';
+                } else {
+                  e.target.style.display = 'none';
+                  if (e.target.nextSibling) e.target.nextSibling.style.display = 'block';
+                }
               }}
             />
             <h2 style={{ display: 'none' }}>Fixio<span>.</span></h2>
