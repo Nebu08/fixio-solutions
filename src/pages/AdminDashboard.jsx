@@ -75,8 +75,26 @@ export default function AdminDashboard() {
 
   // --- Handlers: Orders ---
   const handleStatusChange = async (orderId, status) => {
-    const res = await updateOrderStatus(orderId, status);
-    if (!res.success) alert('Error: ' + res.error);
+    let code = undefined;
+
+    if (status === 'Entregado') {
+      code = window.prompt('Ingrese el código de verificación del cliente (6 dígitos):');
+      if (!code) return; // Cancelado por el usuario o input vacío
+    }
+
+    const res = await updateOrderStatus(orderId, status, code);
+    
+    if (!res.success) {
+      window.alert('Error: ' + res.error);
+    } else {
+      if (status === 'En camino' && res.data?.deliveryCode) {
+        window.alert(
+          'Código generado y enviado por correo al cliente.\\nPuedes proporcionárselo manualmente si es necesario:\\n\\nCÓDIGO: ' + res.data.deliveryCode
+        );
+      } else if (status === 'Entregado') {
+        window.alert('Orden verificada y entregada exitosamente.');
+      }
+    }
   };
 
   // --- Handlers: Banners ---

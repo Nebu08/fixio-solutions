@@ -43,13 +43,13 @@ export function OrderProvider({ children }) {
     }
   };
 
-  const updateOrderStatus = async (orderId, newStatus) => {
+  const updateOrderStatus = async (orderId, newStatus, deliveryCode) => {
     try {
-      await apiUpdateOrderStatus(orderId, newStatus);
+      const resp = await apiUpdateOrderStatus(orderId, newStatus, deliveryCode);
       setOrders(prev => prev.map(order => 
         order.id === orderId ? { ...order, status: newStatus } : order
       ));
-      return { success: true };
+      return { success: true, data: resp };
     } catch (err) {
       console.error('Error updating order status:', err);
       return { success: false, error: err.message };

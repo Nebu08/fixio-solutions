@@ -90,11 +90,11 @@ export const getUserOrders = async (userId) => {
   }).then(handleResponse);
 };
 
-export const updateOrderStatus = async (orderId, status) => {
+export const updateOrderStatus = async (orderId, status, deliveryCode) => {
   return fetch(`${BASE_URL}/orders/${orderId}/status`, {
     method: 'PATCH',
     headers: headers(),
-    body: JSON.stringify({ status })
+    body: JSON.stringify({ status, deliveryCode })
   }).then(handleResponse);
 };
 
